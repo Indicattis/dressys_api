@@ -19,11 +19,12 @@ model Cliente {
   client_mail     String @unique
   client_age      Int
 
-  //RELATIONS
-
   //DEFAULT COLUMNS
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+
+  //RELATIONS ENDPOINT
+  requisicao Requisicao[]
 
   //TABLE NAME
   @@map("DRESSING_CLIENTES")
@@ -40,5 +41,28 @@ model Colaborador {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
+  //RELATIONS ENDPOINT
+  requisicao Requisicao[]
+
   @@map("DRESSING_COLABORADORES")
+}
+
+model Requisicao {
+  id           Int     @id @default(autoincrement())
+  req_services String
+  req_duration String
+  req_price    Decimal @db.Decimal(10, 2)
+  req_status   Boolean
+  req_client   String
+  req_colab    String
+
+  //RELATIONS
+  cliente     Cliente     @relation(fields: [req_client], references: [id])
+  colaborador Colaborador @relation(fields: [req_colab], references: [id])
+
+  //DEFAULT COLUMNS
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("DRESSING_REQS")
 }
