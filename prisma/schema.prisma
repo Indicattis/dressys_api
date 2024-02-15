@@ -12,8 +12,12 @@ datasource db {
 
 model Cliente {
   //COLUMNS
-  id          String @id @default(uuid())
-  client_name String
+  id              String @id @default(uuid())
+  client_name     String
+  client_number   String @unique
+  client_password String
+  client_mail     String @unique
+  client_age      Int
 
   //RELATIONS
 
@@ -23,4 +27,18 @@ model Cliente {
 
   //TABLE NAME
   @@map("DRESSING_CLIENTES")
+}
+
+model Colaborador {
+  id             String @id @default(uuid())
+  colab_name     String
+  colab_number   String @unique
+  colab_password String
+  colab_mail     String @unique
+  colab_age      Int
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("DRESSING_COLABORADORES")
 }
