@@ -52,13 +52,13 @@ model Requisicao {
   req_services String
   req_duration String
   req_price    Decimal @db.Decimal(10, 2)
-  req_status   Boolean
+  req_status   Boolean @default(false)
   req_client   String
-  req_colab    String
+  req_colab    String?
 
   //RELATIONS
-  cliente     Cliente     @relation(fields: [req_client], references: [id])
-  colaborador Colaborador @relation(fields: [req_colab], references: [id])
+  cliente     Cliente      @relation(fields: [req_client], references: [id])
+  colaborador Colaborador? @relation(fields: [req_colab], references: [id])
 
   //DEFAULT COLUMNS
   createdAt DateTime @default(now())
