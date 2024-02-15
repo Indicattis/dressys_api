@@ -37,6 +37,7 @@ model Colaborador {
   colab_password String
   colab_mail     String @unique
   colab_age      Int
+  colab_level    Int
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -50,7 +51,7 @@ model Colaborador {
 model Requisicao {
   id           Int     @id @default(autoincrement())
   req_services String
-  req_duration String
+  req_duration BigInt
   req_price    Decimal @db.Decimal(10, 2)
   req_status   Boolean @default(false)
   req_client   String
@@ -65,4 +66,11 @@ model Requisicao {
   updatedAt DateTime @updatedAt
 
   @@map("DRESSING_REQS")
+}
+
+model Service {
+  id               Int     @id @default(autoincrement())
+  serv_description String  @unique
+  serv_price       Decimal @db.Decimal(10, 2)
+  serv_duration    BigInt
 }
