@@ -1,0 +1,27 @@
+[
+  {
+    "serv_description": "Manicure",
+    "serv_price": "25",
+    "serv_duration": 20
+  },
+  {
+    "serv_description": "Pedicure",
+    "serv_price": "35",
+    "serv_duration": 30
+  },
+  {
+    "serv_description": "Podologa",
+    "serv_price": "40",
+    "serv_duration": 45
+  },
+  {
+    "serv_description": "Massoterapia",
+    "serv_price": "40",
+    "serv_duration": 30
+  },
+  {
+    "serv_description": "Depilação",
+    "serv_price": "50",
+    "serv_duration": 40
+  }
+]
