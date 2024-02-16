@@ -39,7 +39,6 @@ model Colaborador {
   colab_level    Int
 
   createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
 
   //RELATIONS ENDPOINT
   requisicao Requisicao[]
