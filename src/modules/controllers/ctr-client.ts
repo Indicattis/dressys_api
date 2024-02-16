@@ -12,7 +12,7 @@ export class ctr_create_client {
 
     const newClient = new create_client();
 
-    const result = await newClient.execute(data)
+    const result = await newClient.execute(data);
 
     return res.status(201).json(result);
   }

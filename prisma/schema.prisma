@@ -47,11 +47,12 @@ model Colaborador {
 }
 
 model Requisicao {
-  id           Int     @id @default(autoincrement())
+  id           Int      @id @default(autoincrement())
+  req_date     DateTime
   req_services String
-  req_duration BigInt
-  req_price    Decimal @db.Decimal(10, 2)
-  req_status   Boolean @default(false)
+  req_duration Int
+  req_price    Decimal  @db.Decimal(10, 2)
+  req_status   Boolean  @default(false)
   req_client   String
   req_colab    String?
 
@@ -71,4 +72,6 @@ model Service {
   serv_description String
   serv_price       Decimal @db.Decimal(10, 2)
   serv_duration    Int
+
+  @@map("DRESSING_SERVICES")
 }
