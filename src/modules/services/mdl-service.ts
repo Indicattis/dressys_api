@@ -26,3 +26,11 @@ export class create_service {
     return createdItems;
   }
 }
+
+
+export class select_service {
+  async fetch(): Promise<ServiceDTO[]> {
+      const items = await prisma.service.findMany();
+      return items;
+  }
+}
