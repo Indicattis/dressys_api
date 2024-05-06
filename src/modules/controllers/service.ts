@@ -1,5 +1,5 @@
 import { ServiceDTO } from "../models/dto-service";
-import { create_service, select_service } from "../services/mdl-service";
+import { create_service, select_service } from "../services/service";
 import { Request, Response } from "express";
 
 

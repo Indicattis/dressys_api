@@ -15,6 +15,7 @@
     "@types/jwt-decode": "^3.1.0",
     "cors": "^2.8.5",
     "jwt-decode": "^4.0.0",
+    "prisma": "^5.13.0",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.3.3"
   },

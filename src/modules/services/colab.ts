@@ -1,7 +1,7 @@
 import { Colaborador } from "@prisma/client";
-import { ColabDTO } from "../models/dto-colab";
 import { prisma } from "../../prisma";
 import jwt from 'jsonwebtoken';
+import { ColabDTO } from "../models/dto-colab";
 
 
 

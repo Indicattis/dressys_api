@@ -12,12 +12,15 @@ datasource db {
 
 model Cliente {
   //COLUMNS
-  id              String @id @default(uuid())
+  id              String   @id @default(uuid())
   client_name     String
-  client_number   String @unique
+  client_phone    String   @unique
+  client_genre    String?
   client_password String
-  client_mail     String @unique
-  client_age      Int
+  client_mail     String   @unique
+  client_birthday DateTime
+  client_status   Int      @default(1)
+  client_location String?
 
   //DEFAULT COLUMNS
   createdAt DateTime @default(now())

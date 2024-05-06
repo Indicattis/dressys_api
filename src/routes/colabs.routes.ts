@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { ctr_access_colab, ctr_create_colab } from "../modules/controllers/ctr-colab";
+import { ctr_access_colab, ctr_create_colab } from "../modules/controllers/colab";
 
 const CTR_Create_Colab = new ctr_create_colab();
 const CTR_Access_Colab = new ctr_access_colab();

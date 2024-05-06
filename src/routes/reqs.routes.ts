@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { ctr_create_req } from "../modules/controllers/ctr-req";
+import { ctr_create_req } from "../modules/controllers/req";
 
 
 const CTR_Create_Req = new ctr_create_req();

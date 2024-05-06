@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { ctr_create_service, ctr_select_service } from "../modules/controllers/ctr-service";
+import { ctr_create_service, ctr_select_service } from "../modules/controllers/service";
 
 const CTR_Create_Service = new ctr_create_service();
 const CTR_Select_Service = new ctr_select_service();

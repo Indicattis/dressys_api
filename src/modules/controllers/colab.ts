@@ -1,6 +1,6 @@
-import { ColabDTO } from "../models/dto-colab";
-import { access_colab, create_colab } from "../services/mdl-colab";
+import { access_colab, create_colab } from "../services/colab";
 import { Request, Response } from "express";
+import { ColabDTO } from "../models/dto-colab";
 
 
 
