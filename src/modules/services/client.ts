@@ -91,4 +91,29 @@ export class access_client {
           return { authenticated: false };
       }
   }
+
+  async google_auth_client(data: ClientDTO) {
+    const clientExists = await prisma.cliente.findFirst({
+      where: {
+        client_mail: data.client_mail,
+      },
+    })
+    if(!clientExists) {
+      throw new Error('Email não cadastrado!');
+    }
+    if (clientExists) {
+      const token = jwt.sign(
+        {
+            client_id: clientExists.id,
+            client_name: clientExists.client_name,
+            client_mail: clientExists.client_mail,
+        },
+        'clientToken',
+        { expiresIn: '1h' }
+    );
+    return { authenticated: true, token };
+    } else {
+      return { authenticated: false }
+    }
+  }
 }

@@ -45,4 +45,21 @@ export class ctr_access_client {
 
       return res.status(201).json(result);
   }
+
+  async google_auth_client(req: Request, res: Response){
+      const data: ClientDTO = req.body;
+      
+      const accessStudent = new access_client();
+
+      try {
+        const result = await accessStudent.google_auth_client( data );
+        return res.status(201).json(result);
+      } catch (error: any) {
+        if (error.message === 'Email não cadastrado!') {
+          return res.status(400).json({ error: error.message });
+        } else {
+          return res.status(500).json({ error: 'Erro interno do servidor' });
+        }
+      }
+  }
 }
