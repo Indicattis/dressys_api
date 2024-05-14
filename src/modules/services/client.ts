@@ -1,7 +1,7 @@
 import { Cliente } from "@prisma/client";
 import { prisma } from "../../prisma";
-import { ClientDTO } from "../models/dto-client";
 import jwt from 'jsonwebtoken';
+import { ClientDTO } from "../models/dto-client";
 
 
 
@@ -78,9 +78,10 @@ export class access_client {
       if (client && data.client_password === client.client_password) {
           const token = jwt.sign(
               {
-                  client_id: client.id,
+                  id: client.id,
                   client_name: client.client_name,
                   client_mail: client.client_mail,
+                  client_phone: client.client_phone,
               },
               'clientToken',
               { expiresIn: '1h' }
